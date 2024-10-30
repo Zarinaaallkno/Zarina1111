@@ -1,0 +1,17 @@
+def binary_search(array, target):
+  left = 0
+  right = len(array) - 1
+  while left <= right:
+    mid = (left + right) // 2
+    if array[mid] == target:
+      return mid
+    elif array[mid] < target:
+      left = mid + 1
+    else:
+      right = mid - 1
+  return -1
+
+array = [2, 5, 7, 8, 11, 12]
+target = 12
+index = binary_search(array, target)
+print(f"Индекс элемента {target}: {index}") # Вывод: Индекс элемента 12: 5
