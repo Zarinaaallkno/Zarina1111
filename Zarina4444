@@ -1,0 +1,9 @@
+def combined_cipher(text):
+  encrypted_text = atbash_cipher(text)
+  encrypted_text = enigma_cipher(encrypted_text, rotors)
+  # Добавить логику для бинарного поиска по зашифрованному тексту
+  return encrypted_text
+
+text = "Hello world!"
+encrypted_text = combined_cipher(text)
+print(f"Зашифрованный текст: {encrypted_text}")
