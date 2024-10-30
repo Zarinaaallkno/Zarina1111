@@ -1,0 +1,21 @@
+import random
+
+def enigma_cipher(text, rotors):
+  alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  result = ''
+  for char in text.lower():
+    if char in alphabet:
+      index = alphabet.index(char)
+      for rotor in rotors:
+        index = (index + rotor) % len(alphabet)
+      result += alphabet[index]
+    else:
+      result += char
+  return result
+
+# Генерация случайных роторов
+rotors = [random.randint(0, 25) for _ in range(3)]
+
+text = "Hello world!"
+encrypted_text = enigma_cipher(text, rotors)
+print(f"Зашифрованный текст: {encrypted_text}") 
