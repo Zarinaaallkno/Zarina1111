@@ -1,0 +1,13 @@
+def decimal_to_binary_via_octal(decimal_number):
+    # Переводим из десятичной в восьмеричную
+    octal_number = oct(decimal_number)[2:]  # Убираем '0o' в начале
+    print(f"Восьмеричное представление: {octal_number}")
+
+    # Переводим из восьмеричной в двоичную
+    binary_number = bin(int(octal_number, 8))[2:]  # Убираем '0b' в начале
+    return binary_number
+
+# Пример использования
+decimal_number = 100
+binary_result = decimal_to_binary_via_octal(decimal_number)
+print(f"Двоичное представление: {binary_result}")
