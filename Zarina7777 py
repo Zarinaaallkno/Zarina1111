@@ -1,0 +1,17 @@
+def weigh_coins(group1, group2):
+    weight_group1 = sum(group1)
+    weight_group2 = sum(group2)
+
+    if weight_group1 > weight_group2:
+        return "Группа 1 тяжелее"
+    elif weight_group1 < weight_group2:
+        return "Группа 2 тяжелее"
+    else:
+        return "Группы равны по весу"
+
+if __name__ == "__main__":
+    group1 = [5, 5, 5] 
+    group2 = [5, 6, 4]
+    
+    result = weigh_coins(group1, group2)
+    print(result)
