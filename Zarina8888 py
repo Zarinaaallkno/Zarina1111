@@ -1,0 +1,11 @@
+def hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f"Переместите диск 1 с {source} на {target}")
+        return
+    hanoi(n - 1, source, auxiliary, target)
+    print(f"Переместите диск {n} с {source} на {target}")
+    hanoi(n - 1, auxiliary, target, source)
+
+if __name__ == "__main__":
+    n = 3  # Количество дисков
+    hanoi(n, 'A', 'C', 'B')  # A - источник, C - цель, B - вспомогательный
